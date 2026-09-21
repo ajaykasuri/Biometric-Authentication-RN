@@ -7,7 +7,11 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.sasanda.auth",
+      "infoPlist": {
+        "NSFaceIDUsageDescription": "This app uses Face ID to securely log you into your account."
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -15,10 +19,19 @@
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
-      }
+      },
+      "package": "com.sasanda.auth"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-local-authentication",
+        { 
+          "faceIDPermission": "Allow $(PRODUCT_NAME) to use Face ID." 
+        }
+      ]
+    ]
   }
 }
